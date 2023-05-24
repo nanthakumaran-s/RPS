@@ -10,7 +10,47 @@
 </head>
 
 <body>
+    <header class="scoreboard">
+        <h3 class="scoreboard-title">Rock<br />Paper<br />Scissor</h3>
+        <div class="scoreboard-box">
+            <p class="scoreboard-box-label">Score</p>
+            <p class="scoreboard-box-score">0</p>
+        </div>
+    </header>
 
+    <main class="main">
+        <div class="game-wrapper">
+            <button id="rock" class="choice">
+                <img src="assets/images/icon-rock.svg" />
+            </button>
+            <button id="paper" class="choice">
+                <img src="assets/images/icon-paper.svg" />
+            </button>
+            <button id="scissor" class="choice">
+                <img src="assets/images/icon-scissors.svg" />
+            </button>
+        </div>
+        <div class="result-wrapper hide">
+            <div class="result-wrapper-inner">
+                <button id="player" class="choice">
+                    <img id="result-wrapper-player-img" src="assets/images/icon-scissors.svg" />
+                </button>
+                <p id="result-wrapper-player-text">Some Text</p>
+            </div>
+            <div class="result-wrapper-inner">
+                <p class="announcement-text">Some announcement</p>
+                <button id="play-again" class="btn">Play again</button>
+            </div>
+            <div class="result-wrapper-inner">
+                <button id="computer" class="choice">
+                    <img id="result-wrapper-computer-img" />
+                </button>
+                <p id="result-wrapper-computer-text">Some Text</p>
+            </div>
+        </div>
+
+        <button id="reset" class="btn hide">Reset</button>
+    </main>
 
     <script type="text/javascript" src="assets/js/script.js"></script>
 </body>
