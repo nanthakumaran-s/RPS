@@ -82,7 +82,19 @@ body {
     background-color: white;
     border-radius: 100px;
     cursor: pointer;
-    border: 15px solid #EC9E0E;
+    border: 15px solid;
+}
+
+.rock {
+    border-color: #4A6AF0;
+}
+
+.paper {
+    border-color: #EC9E0E;
+}
+
+.scissor {
+    border-color: #D9425C;
 }
 
 .hide {
