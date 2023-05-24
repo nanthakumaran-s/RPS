@@ -1,5 +1,5 @@
-let playerScore = 0;
-let computerScore = 0;
+let playerScore = localStorage.getItem("playerScore") | 0;
+let computerScore = localStorage.getItem("computerScore") | 0;
 
 const possiblities = ["rock", "paper", "scissor"];
 
@@ -56,6 +56,8 @@ const play = (choice) => {
   refs.computerSelection.parentNode.classList.add(computerChoice);
   refs.computerSelection.src = "assets/images/icon-" + computerChoice + ".svg";
   refs.computerSelectionText.innerText = computerChoice;
+
+  store(playerScore, computerScore);
 };
 
 const playAgain = () => {
@@ -67,9 +69,12 @@ const playAgain = () => {
 const reset = () => {
   playerScore = 0;
   computerScore = 0;
+  localStorage.setItem("computerScore", computerScore);
+  localStorage.setItem("playerScore", playerScore);
   refs.gameWrapper.classList.remove("hide");
   refs.resultWrapper.classList.add("hide");
   refs.reset.classList.add("hide");
+  setScore();
 };
 
 const getResult = (choice, computerChoice) => {
@@ -85,3 +90,14 @@ const getResult = (choice, computerChoice) => {
     return false;
   }
 };
+
+const store = (playerScore, computerScore) => {
+  localStorage.setItem("computerScore", computerScore);
+  localStorage.setItem("playerScore", playerScore);
+};
+
+const setScore = () => {
+  refs.score.innerText = `${playerScore} | ${computerScore}`;
+};
+
+setScore();
